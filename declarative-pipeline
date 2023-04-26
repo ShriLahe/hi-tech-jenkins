@@ -1,0 +1,29 @@
+pipeline {
+    
+    agent {label 'master'}
+    
+    stages {
+        stage ('Cleaning the Jenkins workspace') {
+            steps {
+                cleanWs()
+            }
+        }
+        
+        stage ('Cloning the source code from the repo') {
+            steps {
+                git credentialsId: 'Git-Hub-Credentials', url: 'https://github.com/hariharanjenkin/simple.git'
+            }
+        }
+        
+        stage ('List the cloned files') {
+            steps {
+                sh '''
+                    pwd
+                    ls
+                '''
+            }
+        }
+        
+        
+    }
+}
