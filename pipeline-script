@@ -1,0 +1,14 @@
+node {
+    stage('Build') {
+        echo "Bulinding the pipeline"
+    }
+    stage('Test') {
+        echo "Testing the pipeline"
+    }
+    stage('Deploy') {
+        echo "Deploying the pipeline"
+    }
+    stage("Relase") {
+        echo "Release porcess"
+    }
+}
